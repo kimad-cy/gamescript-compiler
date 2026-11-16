@@ -1,0 +1,63 @@
+(* GameScript v1.0 -- formal grammar in EBNF.
+   Terminals in "quotes" are keywords/punctuation; ID, INT, FLOAT, STRING are
+   the lexical classes defined in LANGUAGE_SPEC.md.
+   The implementation is src/parser/parser.y (LALR(1), Bison). *)
+
+program     = "GAME" ID "{" { entity | rule | function } "}" ;
+
+(* ---------- declarations ---------- *)
+entity      = "ENTITY" ID "{" { property | function | event } "}" ;
+property    = "PROPERTY" ID ":" type [ "=" expr ] ";" ;
+type        = "INTEGER" | "FLOAT" | "STRING" | "BOOLEAN" | "VECTOR2" ;
+
+function    = "FUNCTION" ID "(" [ param { "," param } ] ")" [ ":" type ] block ;
+param       = ID ":" type ;
+
+event       = "ON" ( "START" | "UPDATE" | "DEATH"
+                   | "COLLISION" "WITH" ID
+                   | "KEY_PRESS" STRING ) block ;
+
+rule        = "RULE" ID block ;
+
+(* ---------- statements ---------- *)
+block       = "{" { statement } "}" ;
+statement   = vardecl | assign | if | while | return | action | callstmt ;
+
+vardecl     = "VAR" ID ":" type [ "=" expr ] ";" ;
+assign      = access "=" expr ";" ;
+callstmt    = call ";" ;
+if          = "IF" expr block [ "ELSE" ( if | block ) ] ;
+while       = "WHILE" expr block ;
+return      = "RETURN" [ expr ] ";" ;
+
+action      = "MOVE" [ ID | "SELF" ] direction "BY" expr ";"
+            | "SPAWN" ID "AT" expr ";"
+            | "DESTROY" ( ID | "SELF" ) ";"
+            | "PLAY" "SOUND" expr ";"
+            | "PRINT" expr ";"
+            | "WIN" ";"
+            | "LOSE" ";" ;
+direction   = "UP" | "DOWN" | "LEFT" | "RIGHT" ;
+
+(* ---------- expressions (lowest precedence first) ---------- *)
+expr        = or ;
+or          = and  { "OR" and } ;                       (* left-assoc  *)
+and         = not  { "AND" not } ;                      (* left-assoc  *)
+not         = "NOT" not | cmp ;
+cmp         = add [ ( "==" | "!=" | "<" | ">" | "<=" | ">=" ) add ] ;   (* NON-assoc *)
+add         = mul  { ( "+" | "-" ) mul } ;              (* left-assoc  *)
+mul         = unary { ( "*" | "/" | "%" ) unary } ;     (* left-assoc  *)
+unary       = "-" unary | primary ;
+primary     = INT | FLOAT | STRING | "TRUE" | "FALSE"
+            | "VECTOR2" "(" expr "," expr ")"
+            | call | access
+            | "(" expr ")" ;
+
+access      = ( ID | "SELF" ) { "." ID } ;              (* x, Player.health, SELF.position.x *)
+call        = [ ( ID | "SELF" ) "." ] ID "(" [ expr { "," expr } ] ")" ;
+
+(* Implementation note: in the Bison grammar `access` and `call` share one
+   left-recursive `postfix` rule so the LALR(1) automaton never has to guess
+   which one it is parsing; the allowed shapes (at most one qualifier on a
+   call, no member access on a call result) are checked in the actions and
+   reported as syntax errors. *)

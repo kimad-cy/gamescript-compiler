@@ -1,0 +1,23 @@
+tests/semantic/constants.gs:4:29: semantic error: initializer of property 'b' must be a constant expression
+        PROPERTY b: INTEGER = a + 1;
+                                ^
+tests/semantic/constants.gs:5:27: semantic error: division by zero (the divisor is the constant 0)
+        PROPERTY c: FLOAT = 1 / 0;
+                              ^
+tests/semantic/constants.gs:6:29: semantic error: modulo by zero (the divisor is the constant 0)
+        PROPERTY d: INTEGER = 5 % 0;
+                                ^
+tests/semantic/constants.gs:7:25: semantic error: division by zero (the divisor is the constant 0)
+        ON START { PRINT 10 / 0; PRINT 10 / 0.0; PRINT 4 % (0); PRINT 2 / -0; PRINT 1 / (1 - 1); }
+                            ^
+tests/semantic/constants.gs:7:39: semantic error: division by zero (the divisor is the constant 0)
+        ON START { PRINT 10 / 0; PRINT 10 / 0.0; PRINT 4 % (0); PRINT 2 / -0; PRINT 1 / (1 - 1); }
+                                          ^
+tests/semantic/constants.gs:7:54: semantic error: modulo by zero (the divisor is the constant 0)
+        ON START { PRINT 10 / 0; PRINT 10 / 0.0; PRINT 4 % (0); PRINT 2 / -0; PRINT 1 / (1 - 1); }
+                                                         ^
+tests/semantic/constants.gs:7:69: semantic error: division by zero (the divisor is the constant 0)
+        ON START { PRINT 10 / 0; PRINT 10 / 0.0; PRINT 4 % (0); PRINT 2 / -0; PRINT 1 / (1 - 1); }
+                                                                        ^
+compilation failed: 0 lexical, 0 syntax, 7 semantic error(s)
+[exit 1]

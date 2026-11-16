@@ -1,0 +1,11 @@
+tests/semantic/conditions.gs:5:10: semantic error: IF condition must be BOOLEAN but is INTEGER
+          IF health { PRINT 1; }
+             ^
+tests/semantic/conditions.gs:6:15: semantic error: WHILE condition must be BOOLEAN but is INTEGER
+          WHILE 1 + 1 { PRINT 2; }
+                  ^
+tests/semantic/conditions.gs:7:21: semantic error: operator 'AND' cannot be applied to BOOLEAN and INTEGER
+          IF health > 5 AND health { PRINT 3; }
+                        ^
+compilation failed: 0 lexical, 0 syntax, 3 semantic error(s)
+[exit 1]

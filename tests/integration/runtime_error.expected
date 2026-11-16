@@ -1,0 +1,5 @@
+before
+runtime error: division by zero (frame 1)
+-- game 'Boom': ERROR after 1 frame(s)
+   T: position=VECTOR2(0.0, 0.0) zero=0
+[exit 0]

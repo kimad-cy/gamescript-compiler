@@ -1,0 +1,14 @@
+tests/syntax/recovery_many.gs:5:11: syntax error: unexpected ';'
+          a = ;
+              ^
+tests/syntax/recovery_many.gs:7:13: syntax error: unexpected 'INTEGER', expecting ':'
+          VAR x INTEGER = 2;
+                ^
+tests/syntax/recovery_many.gs:8:16: syntax error: unexpected ';'
+          PRINT a +;
+                   ^
+tests/syntax/recovery_many.gs:9:13: syntax error: unexpected '{'
+          WHILE { }
+                ^
+compilation failed: 0 lexical, 4 syntax, 0 semantic error(s)
+[exit 1]

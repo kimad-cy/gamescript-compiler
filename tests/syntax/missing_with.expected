@@ -1,0 +1,5 @@
+tests/syntax/missing_with.gs:2:27: syntax error: unexpected identifier, expecting 'WITH'
+      ENTITY P { ON COLLISION Enemy { PRINT "x"; } }
+                              ^
+compilation failed: 0 lexical, 1 syntax, 0 semantic error(s)
+[exit 1]

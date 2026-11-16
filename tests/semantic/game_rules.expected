@@ -1,0 +1,44 @@
+tests/semantic/game_rules.gs:4:16: semantic error: WIN can only be used inside a RULE
+        ON START { WIN; LOSE; }
+                   ^
+tests/semantic/game_rules.gs:4:21: semantic error: LOSE can only be used inside a RULE
+        ON START { WIN; LOSE; }
+                        ^
+tests/semantic/game_rules.gs:5:5: semantic error: unknown entity 'Ghost' in ON COLLISION WITH
+        ON COLLISION WITH Ghost { PRINT 1; }
+        ^
+tests/semantic/game_rules.gs:6:5: semantic error: invalid key name "FIRE" (use SPACE, UP, DOWN, LEFT, RIGHT, ENTER, ESCAPE, A-Z or 0-9)
+        ON KEY_PRESS "FIRE" { PRINT 2; }
+        ^
+tests/semantic/game_rules.gs:7:5: semantic error: duplicate ON START handler in entity 'P'
+        ON START { PRINT 3; }
+        ^
+tests/semantic/game_rules.gs:9:5: semantic error: duplicate ON UPDATE handler in entity 'P'
+        ON UPDATE { PRINT 5; }
+        ^
+tests/semantic/game_rules.gs:11:5: semantic error: duplicate ON KEY_PRESS "A" handler in entity 'P'
+        ON KEY_PRESS "A" { PRINT 7; }
+        ^
+tests/semantic/game_rules.gs:12:16: semantic error: DESTROY SELF inside ON DEATH would recurse forever
+        ON DEATH { DESTROY SELF; }
+                   ^
+tests/semantic/game_rules.gs:15:5: semantic error: assignment is not allowed inside RULE 'R' (rules only observe the game)
+        P.score = 1;
+        ^
+tests/semantic/game_rules.gs:16:5: semantic error: MOVE is not allowed inside RULE 'R' (rules only observe the game)
+        MOVE P UP BY 1;
+        ^
+tests/semantic/game_rules.gs:17:5: semantic error: SPAWN is not allowed inside RULE 'R' (rules only observe the game)
+        SPAWN P AT VECTOR2(0, 0);
+        ^
+tests/semantic/game_rules.gs:18:5: semantic error: DESTROY is not allowed inside RULE 'R' (rules only observe the game)
+        DESTROY P;
+        ^
+tests/semantic/game_rules.gs:19:5: semantic error: PLAY SOUND is not allowed inside RULE 'R' (rules only observe the game)
+        PLAY SOUND "x.wav";
+        ^
+tests/semantic/game_rules.gs:22:8: semantic error: rule 'R' is already declared (line 14)
+      RULE R { LOSE; }
+           ^
+compilation failed: 0 lexical, 0 syntax, 14 semantic error(s)
+[exit 1]

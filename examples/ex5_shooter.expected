@@ -1,0 +1,9 @@
+[sound] shoot.wav
+enemy hit!
+[sound] explosion.wav
+*** YOU WIN (frame 10) ***
+-- game 'Shooter': WON after 10 frame(s)
+   Bullet: position=VECTOR2(0.0, -85.0) speed=8.5
+   Enemy: position=VECTOR2(100.0, 300.0) hits=1
+   Player: position=VECTOR2(95.0, 400.0) speed=5
+[exit 0]

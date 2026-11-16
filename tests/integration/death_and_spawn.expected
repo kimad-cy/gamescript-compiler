@@ -1,0 +1,6 @@
+0
+hero died
+-- game 'Life': PLAYING after 10 frame(s)
+   Spike: position=VECTOR2(-50.0, 0.0) hits=100
+   Hero: position=VECTOR2(0.0, 0.0) hp=0  [destroyed]
+[exit 0]

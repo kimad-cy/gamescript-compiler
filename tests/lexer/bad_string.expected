@@ -1,0 +1,18 @@
+tests/lexer/bad_string.gs:2:9: lexical error: unterminated string literal
+      PRINT "abc;
+            ^
+tests/lexer/bad_string.gs:3:14: lexical error: invalid escape sequence '\q' (allowed: \" \\ \n)
+      PRINT "bad \q escape";
+                 ^
+  1:1   KW_GAME     
+  1:6   ID           S
+  1:8   LBRACE      
+  2:3   KW_PRINT    
+  3:3   KW_PRINT    
+  3:24  SEMI        
+  4:3   KW_PRINT    
+  4:9   STRING_LIT   "fine"
+  4:15  SEMI        
+  5:1   RBRACE      
+-- 10 token(s), 2 lexical error(s)
+[exit 1]

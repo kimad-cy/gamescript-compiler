@@ -1,0 +1,20 @@
+A
+B
+C
+2.0
+3.0
+8
+line1
+line2 "quoted" \ done
+
+FALSE
+VECTOR2(0.0, 0.0)
+0
+0.0
+TRUE
+TRUE
+TRUE
+-- game 'Edge': PLAYING after 60 frame(s)
+   Empty: position=VECTOR2(0.0, 0.0)
+   T: position=VECTOR2(0.0, 0.0)
+[exit 0]

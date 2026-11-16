@@ -1,0 +1,58 @@
+tests/lexer/bad_numbers.gs:2:23: lexical error: malformed float literal '5.' (digits are required after the point)
+      PROPERTY a: FLOAT = 5.;
+                          ^
+tests/lexer/bad_numbers.gs:3:23: lexical error: malformed float literal '.5' (digits are required before the point)
+      PROPERTY b: FLOAT = .5;
+                          ^
+tests/lexer/bad_numbers.gs:4:25: lexical error: invalid token '12abc': identifiers cannot start with a digit
+      PROPERTY c: INTEGER = 12abc;
+                            ^
+tests/lexer/bad_numbers.gs:5:25: lexical error: integer literal '99999999999' does not fit in 32 bits
+      PROPERTY d: INTEGER = 99999999999;
+                            ^
+tests/lexer/bad_numbers.gs:7:25: lexical error: integer literal '2147483648' does not fit in 32 bits
+      PROPERTY f: INTEGER = 2147483648;
+                            ^
+  1:1   KW_GAME     
+  1:6   ID           N
+  1:8   LBRACE      
+  2:3   KW_PROPERTY 
+  2:12  ID           a
+  2:13  COLON       
+  2:15  KW_FLOAT    
+  2:21  ASSIGN      
+  2:25  SEMI        
+  3:3   KW_PROPERTY 
+  3:12  ID           b
+  3:13  COLON       
+  3:15  KW_FLOAT    
+  3:21  ASSIGN      
+  3:25  SEMI        
+  4:3   KW_PROPERTY 
+  4:12  ID           c
+  4:13  COLON       
+  4:15  KW_INTEGER  
+  4:23  ASSIGN      
+  4:30  SEMI        
+  5:3   KW_PROPERTY 
+  5:12  ID           d
+  5:13  COLON       
+  5:15  KW_INTEGER  
+  5:23  ASSIGN      
+  5:36  SEMI        
+  6:3   KW_PROPERTY 
+  6:12  ID           e
+  6:13  COLON       
+  6:15  KW_INTEGER  
+  6:23  ASSIGN      
+  6:25  INT_LIT      2147483647
+  6:35  SEMI        
+  7:3   KW_PROPERTY 
+  7:12  ID           f
+  7:13  COLON       
+  7:15  KW_INTEGER  
+  7:23  ASSIGN      
+  7:35  SEMI        
+  8:1   RBRACE      
+-- 41 token(s), 5 lexical error(s)
+[exit 1]

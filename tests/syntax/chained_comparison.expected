@@ -1,0 +1,5 @@
+tests/syntax/chained_comparison.gs:4:28: syntax error: comparison operators cannot be chained; combine two comparisons with AND
+        ON START { PRINT 1 < a < 3; }
+                               ^
+compilation failed: 0 lexical, 1 syntax, 0 semantic error(s)
+[exit 1]

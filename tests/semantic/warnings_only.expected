@@ -1,0 +1,11 @@
+tests/semantic/warnings_only.gs:4:9: warning: variable 'unused' is declared but never used
+        VAR unused: INTEGER = 1;
+            ^
+tests/semantic/warnings_only.gs:6:5: warning: unreachable code after RETURN
+        PRINT "never runs";
+        ^
+tests/semantic/warnings_only.gs:8:3: warning: entity 'Idle' has no event handlers and will never do anything
+      ENTITY Idle { PROPERTY x: INTEGER = 1; }
+      ^
+ok: tests/semantic/warnings_only.gs passed all checks (3 warning(s))
+[exit 0]

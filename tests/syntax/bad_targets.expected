@@ -1,0 +1,14 @@
+tests/syntax/bad_targets.gs:5:7: syntax error: invalid assignment target (expected a variable or property)
+          f() = 3;
+          ^
+tests/syntax/bad_targets.gs:6:7: syntax error: unexpected integer literal
+          5;
+          ^
+tests/syntax/bad_targets.gs:7:10: syntax error: cannot access a member of a function call result
+          f().x = 1;
+             ^
+tests/syntax/bad_targets.gs:8:7: syntax error: invalid call target (expected f(...) or Entity.f(...))
+          a.b.c(1);
+          ^
+compilation failed: 0 lexical, 4 syntax, 0 semantic error(s)
+[exit 1]

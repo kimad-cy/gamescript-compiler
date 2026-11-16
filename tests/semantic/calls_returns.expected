@@ -1,0 +1,41 @@
+tests/semantic/calls_returns.gs:4:12: semantic error: function 'bad1' may reach its end without returning a value of type INTEGER
+      FUNCTION bad1(): INTEGER { PRINT 1; }
+               ^
+tests/semantic/calls_returns.gs:5:12: semantic error: function 'bad2' may reach its end without returning a value of type INTEGER
+      FUNCTION bad2(x: INTEGER): INTEGER { IF x > 0 { RETURN 1; } }
+               ^
+tests/semantic/calls_returns.gs:6:37: semantic error: cannot return STRING from function 'bad3' declared to return INTEGER
+      FUNCTION bad3(): INTEGER { RETURN "s"; }
+                                        ^
+tests/semantic/calls_returns.gs:7:21: semantic error: function 'bad4' returns no value, but RETURN has an expression
+      FUNCTION bad4() { RETURN 5; }
+                        ^
+tests/semantic/calls_returns.gs:8:30: semantic error: function 'bad5' must return a value of type INTEGER
+      FUNCTION bad5(): INTEGER { RETURN; }
+                                 ^
+tests/semantic/calls_returns.gs:12:13: semantic error: function 'add' expects 2 argument(s) but got 1
+          PRINT add(1);
+                ^
+tests/semantic/calls_returns.gs:13:20: semantic error: argument 2 of 'add': expected INTEGER but got STRING
+          PRINT add(1, "x");
+                       ^
+tests/semantic/calls_returns.gs:14:13: semantic error: function 'add' expects 2 argument(s) but got 3
+          PRINT add(1, 2, 3);
+                ^
+tests/semantic/calls_returns.gs:15:13: semantic error: function 'noValue' returns no value, so it cannot be used in an expression
+          PRINT noValue();
+                ^
+tests/semantic/calls_returns.gs:16:17: semantic error: function 'noValue' returns no value, so it cannot be used in an expression
+          PRINT 1 + noValue();
+                    ^
+tests/semantic/calls_returns.gs:17:15: semantic error: entity 'P' has no function 'nothing'
+          PRINT P.nothing();
+                  ^
+tests/semantic/calls_returns.gs:18:13: semantic error: unknown entity 'Q'
+          PRINT Q.add(1, 2);
+                ^
+tests/semantic/calls_returns.gs:19:13: semantic error: 'add' is a function; call it with parentheses
+          PRINT add;
+                ^
+compilation failed: 0 lexical, 0 syntax, 13 semantic error(s)
+[exit 1]

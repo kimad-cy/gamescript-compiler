@@ -1,0 +1,14 @@
+1
+2
+3
+factorial of 5 = (computed)
+120
+3.5
+2.5
+1
+TRUE
+VECTOR2(7.0, 10.0)
+17.0
+-- game 'Math': PLAYING after 60 frame(s)
+   Calculator: position=VECTOR2(0.0, 0.0) label=factorial of 5 =
+[exit 0]

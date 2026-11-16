@@ -1,0 +1,54 @@
+Game Arena
+  Entity Enemy
+    Property attack : INTEGER
+      Int 30
+    On Start
+      Assign
+        Access position
+        Vector2
+          Int 100
+          Int 0
+    On Update
+      Move SELF LEFT
+        Int 5
+  Entity Player
+    Property health : INTEGER
+      Int 100
+    Property defense : INTEGER
+      Int 10
+    On Collision With Enemy
+      Assign
+        Access health
+        Binary -
+          Access health
+          Call calculateDamage
+            Access Enemy.attack
+            Access defense
+      Print
+        String "Player hit! health is now"
+      Print
+        Access health
+      If
+        Binary <=
+          Access health
+          Int 0
+        Then
+          Destroy SELF
+    On Death
+      Print
+        String "Player destroyed"
+  Function calculateDamage(attack: INTEGER, defense: INTEGER) : INTEGER
+    Var dmg : INTEGER
+      Binary -
+        Access attack
+        Access defense
+    If
+      Binary <
+        Access dmg
+        Int 0
+      Then
+        Return
+          Int 0
+    Return
+      Access dmg
+[exit 0]

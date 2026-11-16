@@ -1,0 +1,41 @@
+tests/lexer/edge_cases.gs:3:4: lexical error: malformed float literal '.5' (digits are required before the point)
+    1.5.5 /**/ a/b // trailing comment
+       ^
+  1:1   ID           GAMEOVER
+  1:10  ID           game
+  1:15  ID           Game
+  1:20  ID           STARTUP
+  1:28  ID           _x1
+  1:32  ID           x
+  1:33  DOT         
+  1:34  ID           y
+  1:35  DOT         
+  1:36  ID           z
+  2:1   ID           a
+  2:2   LE          
+  2:4   ID           b
+  2:6   ID           a
+  2:7   LT          
+  2:8   ID           b
+  2:10  ID           a
+  2:11  EQ          
+  2:13  ID           b
+  2:15  ID           a
+  2:16  ASSIGN      
+  2:17  ID           b
+  2:19  ID           a
+  2:20  NEQ         
+  2:22  ID           b
+  2:24  ID           a
+  2:25  GE          
+  2:27  ID           b
+  3:1   FLOAT_LIT    1.5
+  3:12  ID           a
+  3:13  SLASH       
+  3:14  ID           b
+  4:1   STRING_LIT   ""
+  4:4   STRING_LIT   "a//b"
+  4:11  STRING_LIT   "/* not a comment */"
+  5:2   ID           tabbed
+-- 36 token(s), 1 lexical error(s)
+[exit 1]

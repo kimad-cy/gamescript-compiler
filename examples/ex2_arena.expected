@@ -1,0 +1,6 @@
+Player hit! health is now
+80
+-- game 'Arena': PLAYING after 60 frame(s)
+   Enemy: position=VECTOR2(-200.0, 0.0) attack=30
+   Player: position=VECTOR2(0.0, 0.0) health=80 defense=10
+[exit 0]

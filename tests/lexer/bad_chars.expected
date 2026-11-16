@@ -1,0 +1,61 @@
+tests/lexer/bad_chars.gs:2:31: lexical error: invalid character '@'
+      PROPERTY speed: FLOAT = 5.5 @ 2;
+                                  ^
+tests/lexer/bad_chars.gs:3:27: lexical error: invalid character '#'
+      PROPERTY a: INTEGER = 1 # 2;
+                              ^
+tests/lexer/bad_chars.gs:4:12: lexical error: unknown operator '&&' (use AND)
+      IF a > 0 && a < 5 { PRINT "ok"; }
+               ^
+tests/lexer/bad_chars.gs:5:6: lexical error: unexpected '!' (use NOT, or '!=' for inequality)
+      IF ! alive { WIN; }
+         ^
+tests/lexer/bad_chars.gs:6:12: lexical error: non-ASCII character(s) are not allowed outside strings and comments
+      PROPERTY é: STRING = "ok";
+               ^
+  1:1   KW_GAME     
+  1:6   ID           Bad
+  1:10  LBRACE      
+  2:3   KW_PROPERTY 
+  2:12  ID           speed
+  2:17  COLON       
+  2:19  KW_FLOAT    
+  2:25  ASSIGN      
+  2:27  FLOAT_LIT    5.5
+  2:33  INT_LIT      2
+  2:34  SEMI        
+  3:3   KW_PROPERTY 
+  3:12  ID           a
+  3:13  COLON       
+  3:15  KW_INTEGER  
+  3:23  ASSIGN      
+  3:25  INT_LIT      1
+  3:29  INT_LIT      2
+  3:30  SEMI        
+  4:3   KW_IF       
+  4:6   ID           a
+  4:8   GT          
+  4:10  INT_LIT      0
+  4:15  ID           a
+  4:17  LT          
+  4:19  INT_LIT      5
+  4:21  LBRACE      
+  4:23  KW_PRINT    
+  4:29  STRING_LIT   "ok"
+  4:33  SEMI        
+  4:35  RBRACE      
+  5:3   KW_IF       
+  5:8   ID           alive
+  5:14  LBRACE      
+  5:16  KW_WIN      
+  5:19  SEMI        
+  5:21  RBRACE      
+  6:3   KW_PROPERTY 
+  6:14  COLON       
+  6:16  KW_STRING   
+  6:23  ASSIGN      
+  6:25  STRING_LIT   "ok"
+  6:29  SEMI        
+  7:1   RBRACE      
+-- 44 token(s), 5 lexical error(s)
+[exit 1]

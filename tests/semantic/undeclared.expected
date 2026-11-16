@@ -1,0 +1,17 @@
+tests/semantic/undeclared.gs:5:16: semantic error: undeclared identifier 'hp'
+          health = hp + 1;
+                   ^
+tests/semantic/undeclared.gs:6:13: semantic error: undeclared identifier 'ghost'
+          PRINT ghost;
+                ^
+tests/semantic/undeclared.gs:7:13: semantic error: undeclared identifier 'Missing'
+          PRINT Missing.x;
+                ^
+tests/semantic/undeclared.gs:8:15: semantic error: entity 'P' has no property 'nothing'
+          PRINT P.nothing;
+                  ^
+tests/semantic/undeclared.gs:9:7: semantic error: undeclared function 'undefinedFn'
+          undefinedFn(3);
+          ^
+compilation failed: 0 lexical, 0 syntax, 5 semantic error(s)
+[exit 1]

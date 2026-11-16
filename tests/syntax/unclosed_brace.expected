@@ -1,0 +1,5 @@
+tests/syntax/unclosed_brace.gs:4:4: syntax error: unexpected end of file, expecting 'ENTITY', 'FUNCTION', 'RULE' or '}'
+      }
+       ^
+compilation failed: 0 lexical, 1 syntax, 0 semantic error(s)
+[exit 1]

@@ -1,0 +1,5 @@
+tests/syntax/missing_semicolon.gs:6:7: syntax error: missing ';' before 'PRINT'
+          PRINT health;
+          ^
+compilation failed: 0 lexical, 1 syntax, 0 semantic error(s)
+[exit 1]

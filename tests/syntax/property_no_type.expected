@@ -1,0 +1,5 @@
+tests/syntax/property_no_type.gs:3:21: syntax error: unexpected '=', expecting ':'
+        PROPERTY health = 100;
+                        ^
+compilation failed: 0 lexical, 1 syntax, 0 semantic error(s)
+[exit 1]

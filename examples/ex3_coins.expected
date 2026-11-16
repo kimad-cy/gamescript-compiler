@@ -1,0 +1,8 @@
+coin collected
+coin collected
+coin collected
+*** YOU WIN (frame 27) ***
+-- game 'Coins': WON after 27 frame(s)
+   Coin: position=VECTOR2(40.0, 0.0)  [destroyed]
+   Player: position=VECTOR2(108.0, 0.0) score=30 health=73
+[exit 0]

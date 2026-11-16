@@ -1,0 +1,26 @@
+tests/semantic/duplicates.gs:3:12: semantic error: function 'f' conflicts with the function declared at line 2
+      FUNCTION f(): INTEGER { RETURN 2; }
+               ^
+tests/semantic/duplicates.gs:4:26: semantic error: duplicate parameter 'a' in function 'g'
+      FUNCTION g(a: INTEGER, a: INTEGER): INTEGER { RETURN a; }
+                             ^
+tests/semantic/duplicates.gs:5:12: semantic error: function 'Hero' conflicts with the entity declared at line 14
+      FUNCTION Hero(): INTEGER { RETURN 3; }
+               ^
+tests/semantic/duplicates.gs:8:14: semantic error: 'x' is already declared in entity 'P' (line 7)
+        PROPERTY x: FLOAT = 2.0;
+                 ^
+tests/semantic/duplicates.gs:9:14: semantic error: 'position' is a built-in property of every entity and cannot be redeclared
+        PROPERTY position: INTEGER = 3;
+                 ^
+tests/semantic/duplicates.gs:10:14: semantic error: 'x' is already declared in entity 'P' (line 7)
+        FUNCTION x(): INTEGER { RETURN 1; }
+                 ^
+tests/semantic/duplicates.gs:11:40: semantic error: 'v' is already declared in this scope (line 11)
+        ON START { VAR v: INTEGER = 1; VAR v: INTEGER = 2; PRINT v; }
+                                           ^
+tests/semantic/duplicates.gs:13:3: semantic error: entity 'P' conflicts with the entity declared at line 6
+      ENTITY P { ON START { PRINT 1; } }
+      ^
+compilation failed: 0 lexical, 0 syntax, 8 semantic error(s)
+[exit 1]

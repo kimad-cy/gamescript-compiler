@@ -1,0 +1,11 @@
+tests/lexer/bad_comment.gs:3:3: lexical error: unterminated block comment
+      /* this comment never ends
+      ^
+  1:1   KW_GAME     
+  1:6   ID           C
+  1:8   LBRACE      
+  2:3   KW_PRINT    
+  2:9   INT_LIT      1
+  2:10  SEMI        
+-- 6 token(s), 1 lexical error(s)
+[exit 1]

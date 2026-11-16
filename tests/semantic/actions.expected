@@ -1,0 +1,41 @@
+tests/semantic/actions.gs:3:5: semantic error: MOVE has no target: name an entity (not inside an entity here)
+        MOVE UP BY 1;
+        ^
+tests/semantic/actions.gs:4:5: semantic error: SELF can only be used inside an entity
+        DESTROY SELF;
+        ^
+tests/semantic/actions.gs:5:11: semantic error: SELF can only be used inside an entity
+        PRINT SELF.position;
+              ^
+tests/semantic/actions.gs:11:18: semantic error: SPAWN position must be VECTOR2 but is INTEGER
+          SPAWN P AT 5;
+                     ^
+tests/semantic/actions.gs:12:7: semantic error: unknown entity 'Nobody' in SPAWN
+          SPAWN Nobody AT VECTOR2(1, 1);
+          ^
+tests/semantic/actions.gs:13:18: semantic error: MOVE amount must be a number but is STRING
+          MOVE UP BY "far";
+                     ^
+tests/semantic/actions.gs:14:7: semantic error: unknown entity 'Nobody' in MOVE
+          MOVE Nobody LEFT BY 1;
+          ^
+tests/semantic/actions.gs:15:18: semantic error: PLAY SOUND needs a STRING file name but got INTEGER
+          PLAY SOUND 42;
+                     ^
+tests/semantic/actions.gs:16:9: semantic error: cannot assign to vector component 'x'; assign a whole VECTOR2
+          v.x = 3.0;
+            ^
+tests/semantic/actions.gs:17:15: semantic error: VECTOR2 has no member 'z' (members are x and y)
+          PRINT v.z;
+                  ^
+tests/semantic/actions.gs:18:24: semantic error: too many member accesses
+          PRINT position.x.y;
+                           ^
+tests/semantic/actions.gs:19:13: semantic error: VECTOR2 components must be numbers (got INTEGER and STRING)
+          PRINT VECTOR2(1, "a");
+                ^
+tests/semantic/actions.gs:20:7: semantic error: SELF is not a value; use SELF.property
+          SELF = 3;
+          ^
+compilation failed: 0 lexical, 0 syntax, 13 semantic error(s)
+[exit 1]

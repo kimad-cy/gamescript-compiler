@@ -1,0 +1,5 @@
+tests/syntax/missing_braces.gs:4:25: syntax error: missing '{' before 'PRINT'
+        ON START { IF a > 0 PRINT "ok"; }
+                            ^
+compilation failed: 0 lexical, 1 syntax, 0 semantic error(s)
+[exit 1]

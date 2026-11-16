@@ -1,0 +1,5 @@
+tests/syntax/missing_operand.gs:4:34: syntax error: unexpected ';'
+        ON START { health = health - ; }
+                                     ^
+compilation failed: 0 lexical, 1 syntax, 0 semantic error(s)
+[exit 1]

@@ -1,0 +1,38 @@
+tests/semantic/type_mismatch.gs:3:29: semantic error: cannot initialize property 'name' of type STRING with INTEGER
+        PROPERTY name: STRING = 10;
+                                ^
+tests/semantic/type_mismatch.gs:5:31: semantic error: cannot initialize property 'count' of type INTEGER with FLOAT
+        PROPERTY count: INTEGER = 2.5;
+                                  ^
+tests/semantic/type_mismatch.gs:8:24: semantic error: cannot initialize variable 'i' of type INTEGER with STRING
+          VAR i: INTEGER = "text";
+                           ^
+tests/semantic/type_mismatch.gs:10:15: semantic error: cannot assign FLOAT to 'count' of type INTEGER
+          count = speed;
+                  ^
+tests/semantic/type_mismatch.gs:11:15: semantic error: cannot assign INTEGER to 'alive' of type BOOLEAN
+          alive = 1;
+                  ^
+tests/semantic/type_mismatch.gs:13:17: semantic error: operator '+' cannot be applied to STRING and INTEGER
+          PRINT "a" + 1;
+                    ^
+tests/semantic/type_mismatch.gs:14:18: semantic error: operator '+' cannot be applied to BOOLEAN and BOOLEAN
+          PRINT TRUE + FALSE;
+                     ^
+tests/semantic/type_mismatch.gs:15:15: semantic error: operator '%' cannot be applied to INTEGER and FLOAT
+          PRINT 5 % 2.0;
+                  ^
+tests/semantic/type_mismatch.gs:16:13: semantic error: operator 'NOT' cannot be applied to INTEGER
+          PRINT NOT 3;
+                ^
+tests/semantic/type_mismatch.gs:17:13: semantic error: operator '-' cannot be applied to STRING
+          PRINT -"x";
+                ^
+tests/semantic/type_mismatch.gs:18:15: semantic error: operator '<' cannot be applied to INTEGER and STRING
+          PRINT 1 < "a";
+                  ^
+tests/semantic/type_mismatch.gs:19:19: semantic error: operator '==' cannot be applied to BOOLEAN and INTEGER
+          PRINT alive == 1;
+                      ^
+compilation failed: 0 lexical, 0 syntax, 12 semantic error(s)
+[exit 1]

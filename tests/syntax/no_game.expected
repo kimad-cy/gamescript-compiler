@@ -1,0 +1,5 @@
+tests/syntax/no_game.gs:1:1: syntax error: unexpected 'ENTITY', expecting 'GAME'
+    ENTITY P {
+    ^
+compilation failed: 0 lexical, 1 syntax, 0 semantic error(s)
+[exit 1]

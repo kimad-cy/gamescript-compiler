@@ -1,0 +1,107 @@
+  2:1   KW_GAME     
+  2:6   ID           Arena
+  2:12  LBRACE      
+  3:3   KW_FUNCTION 
+  3:12  ID           calculateDamage
+  3:27  LPAREN      
+  3:28  ID           attack
+  3:34  COLON       
+  3:36  KW_INTEGER  
+  3:43  COMMA       
+  3:45  ID           defense
+  3:52  COLON       
+  3:54  KW_INTEGER  
+  3:61  RPAREN      
+  3:62  COLON       
+  3:64  KW_INTEGER  
+  3:72  LBRACE      
+  4:5   KW_VAR      
+  4:9   ID           dmg
+  4:12  COLON       
+  4:14  KW_INTEGER  
+  4:22  ASSIGN      
+  4:24  ID           attack
+  4:31  MINUS       
+  4:33  ID           defense
+  4:40  SEMI        
+  5:5   KW_IF       
+  5:8   ID           dmg
+  5:12  LT          
+  5:14  INT_LIT      0
+  5:16  LBRACE      
+  5:18  KW_RETURN   
+  5:25  INT_LIT      0
+  5:26  SEMI        
+  5:28  RBRACE      
+  6:5   KW_RETURN   
+  6:12  ID           dmg
+  6:15  SEMI        
+  7:3   RBRACE      
+  8:3   KW_ENTITY   
+  8:10  ID           Enemy
+  8:16  LBRACE      
+  8:18  KW_PROPERTY 
+  8:27  ID           attack
+  8:33  COLON       
+  8:35  KW_INTEGER  
+  8:43  ASSIGN      
+  8:45  INT_LIT      30
+  8:47  SEMI        
+  8:49  RBRACE      
+  9:3   KW_ENTITY   
+  9:10  ID           Player
+  9:17  LBRACE      
+ 10:5   KW_PROPERTY 
+ 10:14  ID           health
+ 10:20  COLON       
+ 10:22  KW_INTEGER  
+ 10:30  ASSIGN      
+ 10:32  INT_LIT      100
+ 10:35  SEMI        
+ 11:5   KW_PROPERTY 
+ 11:14  ID           speed
+ 11:19  COLON       
+ 11:21  KW_FLOAT    
+ 11:27  ASSIGN      
+ 11:29  FLOAT_LIT    5.5
+ 11:32  SEMI        
+ 12:5   KW_PROPERTY 
+ 12:14  ID           name
+ 12:18  COLON       
+ 12:20  KW_STRING   
+ 12:27  ASSIGN      
+ 12:29  STRING_LIT   "Hero "One"
+"
+ 12:45  SEMI        
+ 13:5   KW_ON       
+ 13:8   KW_COLLISION
+ 13:18  KW_WITH     
+ 13:23  ID           Enemy
+ 13:29  LBRACE      
+ 14:7   ID           health
+ 14:14  ASSIGN      
+ 14:16  ID           health
+ 14:23  MINUS       
+ 14:25  ID           calculateDamage
+ 14:40  LPAREN      
+ 14:41  ID           Enemy
+ 14:46  DOT         
+ 14:47  ID           attack
+ 14:53  COMMA       
+ 14:55  INT_LIT      10
+ 14:57  RPAREN      
+ 14:58  SEMI        
+ 16:7   KW_IF       
+ 16:10  ID           health
+ 16:17  LE          
+ 16:20  INT_LIT      0
+ 16:22  LBRACE      
+ 16:24  KW_DESTROY  
+ 16:32  KW_SELF     
+ 16:36  SEMI        
+ 16:38  RBRACE      
+ 17:5   RBRACE      
+ 18:3   RBRACE      
+ 19:1   RBRACE      
+-- 104 token(s), 0 lexical error(s)
+[exit 0]

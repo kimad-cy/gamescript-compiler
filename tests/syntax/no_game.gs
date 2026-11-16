@@ -1,0 +1,3 @@
+ENTITY P {
+  PROPERTY a: INTEGER = 1;
+}
